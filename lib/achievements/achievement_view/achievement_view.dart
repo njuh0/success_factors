@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:rive/rive.dart' as rive;
@@ -56,7 +55,6 @@ class _AchievementViewState extends State<AchievementView> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: bg1,
             stretch: true,
             pinned: true,
             expandedHeight: MediaQuery.of(context).size.width * 0.89,
@@ -70,7 +68,7 @@ class _AchievementViewState extends State<AchievementView> {
                     element.title,
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: GoogleFonts.kanit(
+                    style: const TextStyle(
                         fontWeight: FontWeight.w900, color: text1),
                   ),
                 ),
@@ -87,7 +85,7 @@ class _AchievementViewState extends State<AchievementView> {
                         child: Text(
                           "${element.getPercent().toStringAsFixed(2)}%",
                           textAlign: TextAlign.center,
-                          style: GoogleFonts.kanit(
+                          style: TextStyle(
                               fontSize: MediaQuery.of(context).size.width / 8,
                               fontWeight: FontWeight.w900,
                               color: bg1),
@@ -184,21 +182,18 @@ class _AchievementViewState extends State<AchievementView> {
                                   //             width: 1.0, color: Colors.black12))),
                                   child: Text(
                                     "${element.factors![index].percent.toStringAsFixed(2)}%",
-                                    style: GoogleFonts.kanit(
-                                      fontSize: size15,
-                                      color: bg1,
-                                    ),
+                                    style: const TextStyle(
+                                        fontSize: size15, color: bg1),
                                   ),
                                 ),
 
                                 title: Text(
                                   textAlign: TextAlign.center,
                                   element.factors![index].title,
-                                  style: GoogleFonts.kanit(
-                                    fontSize: size15,
-                                    fontWeight: FontWeight.w600,
-                                    color: bg1,
-                                  ),
+                                  style: TextStyle(
+                                      fontSize: size15,
+                                      fontWeight: FontWeight.w600,
+                                      color: bg1),
                                 ),
                                 // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
 
@@ -251,7 +246,7 @@ class _AchievementViewState extends State<AchievementView> {
                                         Flexible(
                                           child: Text(
                                             element.factors![index].title,
-                                            style: GoogleFonts.kanit(
+                                            style: TextStyle(
                                                 fontSize: size30,
                                                 fontWeight: FontWeight.w900,
                                                 color: textColor),
@@ -292,7 +287,7 @@ class _AchievementViewState extends State<AchievementView> {
                                         null)
                                       Text(
                                         element.factors![index].description!,
-                                        style: GoogleFonts.kanit(
+                                        style: TextStyle(
                                             fontSize: size15,
                                             fontWeight: FontWeight.w900,
                                             color: textColor),
@@ -334,7 +329,7 @@ class _AchievementViewState extends State<AchievementView> {
                   Flexible(
                     child: Text(
                       element.title,
-                      style: GoogleFonts.kanit(
+                      style: TextStyle(
                           fontSize: size30,
                           fontWeight: FontWeight.w900,
                           color: bg1),
@@ -370,7 +365,7 @@ class _AchievementViewState extends State<AchievementView> {
               if (element.description != null)
                 Text(
                   element.description!,
-                  style: GoogleFonts.kanit(
+                  style: TextStyle(
                       fontSize: size15,
                       fontWeight: FontWeight.w900,
                       color: bg1),

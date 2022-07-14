@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:success_factors/achievements.dart';
+import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/hive/achievement_hive.dart';
 import 'package:success_factors/hive/factor_hive.dart';
 import 'package:success_factors/provider/hive_provider.dart';
@@ -53,13 +54,21 @@ class Main extends StatelessWidget {
     900: Color.fromRGBO(232, 189, 249, 1),
   };
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Success Factors',
       theme: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+        appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: text1,
+          ),
+        ),
+        fontFamily: 'Kanit',
         primarySwatch: const MaterialColor(0xFF191923, color),
       ),
       home: const Achievements(title: 'ACHIEVEMENTS'),

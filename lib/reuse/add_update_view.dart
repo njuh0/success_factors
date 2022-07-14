@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:success_factors/helps/consts.dart';
@@ -74,14 +73,13 @@ class _AddUpdateViewState extends State<AddUpdateView> {
         label: (widget.type == AddUpdateViewType.addAchievement ||
                 widget.type == AddUpdateViewType.addFactor)
             ? Row(
-                children: [
+                children: const [
                   Text(
                     'ADD',
-                    style: GoogleFonts.kanit(
-                        fontWeight: FontWeight.w900, color: text1),
+                    style: TextStyle(fontWeight: FontWeight.w900, color: text1),
                   ),
-                  const SizedBox(width: 5),
-                  const Icon(
+                  SizedBox(width: 5),
+                  Icon(
                     Icons.add,
                     size: size30,
                     color: text1,
@@ -89,14 +87,13 @@ class _AddUpdateViewState extends State<AddUpdateView> {
                 ],
               )
             : Row(
-                children: [
+                children: const [
                   Text(
                     'EDIT',
-                    style: GoogleFonts.kanit(
-                        fontWeight: FontWeight.w900, color: text1),
+                    style: TextStyle(fontWeight: FontWeight.w900, color: text1),
                   ),
-                  const SizedBox(width: 5),
-                  const Icon(
+                  SizedBox(width: 5),
+                  Icon(
                     Icons.edit,
                     size: size30,
                     color: text1,
@@ -168,7 +165,7 @@ class _AddUpdateViewState extends State<AddUpdateView> {
         ],
         title: Text(
           widget.title,
-          style: GoogleFonts.kanit(fontWeight: FontWeight.w900, color: text1),
+          style: const TextStyle(fontWeight: FontWeight.w900, color: text1),
         ),
         centerTitle: true,
       ),
@@ -179,22 +176,22 @@ class _AddUpdateViewState extends State<AddUpdateView> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(padding30),
+          padding: const EdgeInsets.all(padding30),
           child: Form(
             key: formKey,
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(bottom: padding30),
+                  padding: const EdgeInsets.only(bottom: padding30),
                   child: TextFormField(
                     initialValue: title,
-                    style: GoogleFonts.kanit(fontSize: 40, color: Colors.black),
-                    decoration: InputDecoration(
-                        errorStyle: GoogleFonts.kanit(
-                            fontSize: 20, color: Colors.black),
+                    style: const TextStyle(fontSize: 40, color: Colors.black),
+                    decoration: const InputDecoration(
+                        errorStyle:
+                            TextStyle(fontSize: 20, color: Colors.black),
                         border: InputBorder.none,
                         labelText: "Title",
-                        labelStyle: GoogleFonts.kanit(
+                        labelStyle: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.w900,
                             color: Colors.black)),
@@ -223,14 +220,14 @@ class _AddUpdateViewState extends State<AddUpdateView> {
                             RegExp(r'^\-?\d{0,3}(\.\d{0,2})?')),
                         // digits max 3 before point and max 2 after point. allow minus
                       ],
-                      style: GoogleFonts.kanit(
+                      style: const TextStyle(
                           fontSize: size30, color: Colors.black),
-                      decoration: InputDecoration(
-                          errorStyle: GoogleFonts.kanit(
-                              fontSize: 20, color: Colors.black),
+                      decoration: const InputDecoration(
+                          errorStyle:
+                              TextStyle(fontSize: 20, color: Colors.black),
                           border: InputBorder.none,
                           labelText: "Percent",
-                          labelStyle: GoogleFonts.kanit(
+                          labelStyle: TextStyle(
                               fontSize: size30,
                               fontWeight: FontWeight.w900,
                               color: Colors.black)),
@@ -255,12 +252,12 @@ class _AddUpdateViewState extends State<AddUpdateView> {
                   child: TextFormField(
                     initialValue: description,
                     maxLines: 7,
-                    style: GoogleFonts.kanit(
-                        fontSize: size30, color: Colors.black),
-                    decoration: InputDecoration(
+                    style:
+                        const TextStyle(fontSize: size30, color: Colors.black),
+                    decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelText: "Description",
-                      labelStyle: GoogleFonts.kanit(
+                      labelStyle: TextStyle(
                           fontSize: size30,
                           fontWeight: FontWeight.w900,
                           color: Colors.black),

@@ -1,8 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:success_factors/helps/consts.dart';
 import 'package:rive/rive.dart' as rive;
@@ -72,7 +70,7 @@ class _AchievementItemState extends State<AchievementItem> {
             ],
           ),
           endActionPane: ActionPane(
-            motion: ScrollMotion(),
+            motion: const ScrollMotion(),
             children: [
               SlidableAction(
                 onPressed: (context) {
@@ -96,29 +94,19 @@ class _AchievementItemState extends State<AchievementItem> {
           ),
           child: ListTile(
             contentPadding:
-                EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
             leading: Container(
-              padding: EdgeInsets.only(right: 12.0),
-              // decoration: BoxDecoration(
-              //     border: Border(
-              //         right: BorderSide(width: 1.0, color: Colors.black12))),
+              padding: const EdgeInsets.only(right: 12.0),
               child: Text(
                 "${widget.element.getPercent().toStringAsFixed(2)}%",
-                style: GoogleFonts.kanit(
-                  fontSize: size15,
-                  fontWeight: FontWeight.w600,
-                  color: bg1,
-                ),
+                style: const TextStyle(fontSize: size15, color: bg1),
               ),
             ),
             title: Text(
               textAlign: TextAlign.center,
               '"${widget.element.title}"',
-              style: GoogleFonts.kanit(
-                fontSize: size15,
-                fontWeight: FontWeight.w600,
-                color: bg1,
-              ),
+              style: const TextStyle(
+                  fontSize: size15, fontWeight: FontWeight.w600, color: bg1),
             ),
             trailing:
                 genState(widget.element.state ?? AchivementStateHive.pending),

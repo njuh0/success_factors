@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/widgets/btn_transparent_text.dart';
 import 'package:success_factors/widgets/floating_modal.dart';
 
 class FloatingBtnMenu extends StatefulWidget {
-  FloatingBtnMenu({Key? key}) : super(key: key);
+  const FloatingBtnMenu({Key? key}) : super(key: key);
 
   @override
   State<FloatingBtnMenu> createState() => _FloatingBtnMenuState();
@@ -31,7 +30,7 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
             return SingleChildScrollView(
               child: Container(
                 // color: bg1,
-                margin: EdgeInsets.only(bottom: 20),
+                margin: const EdgeInsets.only(bottom: 20),
                 padding: const EdgeInsets.all(30),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -50,7 +49,7 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                         )),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
@@ -66,32 +65,32 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                         )),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    Text(
+                    const Text(
                       'About',
-                      style: GoogleFonts.kanit(
+                      style: TextStyle(
                           fontSize: size20,
                           fontWeight: FontWeight.w900,
                           color: bg1),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Expanded(
                           child: Card(
                             color: bg1,
                             elevation: 20,
-                            child: Container(
+                            child: SizedBox(
                               height: 100,
                               child: Center(
                                 child: Text(
                                   'Github',
-                                  style: GoogleFonts.kanit(
+                                  style: TextStyle(
                                       fontSize: size15,
                                       fontWeight: FontWeight.w900,
                                       color: text1),
@@ -107,12 +106,12 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                           child: Card(
                             color: bg1,
                             elevation: 20,
-                            child: Container(
+                            child: SizedBox(
                               height: 100,
                               child: Center(
                                 child: Text(
                                   'License',
-                                  style: GoogleFonts.kanit(
+                                  style: TextStyle(
                                       fontSize: size15,
                                       fontWeight: FontWeight.w900,
                                       color: text1),

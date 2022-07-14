@@ -1,6 +1,3 @@
-import 'dart:typed_data';
-
-import 'package:flutter/cupertino.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 part 'factor_hive.g.dart';
