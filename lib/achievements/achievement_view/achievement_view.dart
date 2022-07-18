@@ -30,12 +30,19 @@ class AchievementView extends StatefulWidget {
 class _AchievementViewState extends State<AchievementView> {
   List<SoapBubble> soapBubbles = [];
 
+  late NavigatorState navigator;
+
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration.zero, () {
       genSoapBubbles(MediaQuery.of(context).size.width);
     });
+  }
+    @override
+  void didChangeDependencies() {
+    navigator = Navigator.of(context);
+    super.didChangeDependencies();
   }
 
   @override
@@ -61,7 +68,7 @@ class _AchievementViewState extends State<AchievementView> {
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
               title: GestureDetector(
-                onTap: (() => achievementPopup(context, element)),
+                onTap: (() => achievementPopup(context, element, true)),
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
@@ -75,7 +82,7 @@ class _AchievementViewState extends State<AchievementView> {
               ),
               centerTitle: true,
               background: GestureDetector(
-                onTap: (() => achievementPopup(context, element)),
+                onTap: (() => achievementPopup(context, element, true)),
                 child: Stack(
                   children: [
                     rive.RiveAnimation.asset('assets/rive/new_file.riv',
@@ -311,7 +318,7 @@ class _AchievementViewState extends State<AchievementView> {
     );
   }
 
-  void achievementPopup(BuildContext context, AchievementHive element) {
+  void achievementPopup(BuildContext context, AchievementHive element, bool isAchievement) {
     showFloatingModalBottomSheet(
       backgroundColor: text1,
       context: context,
@@ -351,12 +358,19 @@ class _AchievementViewState extends State<AchievementView> {
                             builder: (context) => AddUpdateView(
                               title: 'EDIT ACHIEVEMENT',
                               type: AddUpdateViewType.updateAchievement,
+                              fromFactor: isAchievement,
                               achievementIndex: widget.index,
                               element: element,
                             ),
                           ),
-                        ).then((value) => setState(
-                            () {})); // setState to update view if user close keyboard (keyboard close causes view refresh) before add item. view don't refresh after item add
+                        ).then((value) {
+                          if(value == "Deleted"){
+                                 navigator.pop();
+                          } else {
+                            setState(() {});
+                          }
+                         
+                        }); // setState to update view if user close keyboard (keyboard close causes view refresh) before add item. view don't refresh after item add
                       },
                     ),
                   ),

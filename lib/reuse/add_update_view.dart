@@ -23,6 +23,7 @@ class AddUpdateView extends StatefulWidget {
   int? achievementIndex;
   int? factorIndex;
   AchievementHive? element;
+  bool fromFactor;
 
   AddUpdateView(
       {Key? key,
@@ -31,8 +32,9 @@ class AddUpdateView extends StatefulWidget {
       required this.type,
       this.achievementIndex,
       this.factorIndex,
-      this.element})
-      : super(key: key);
+      this.element,
+      bool? fromFactor})
+      : fromFactor = fromFactor ?? false , super(key: key);
 
   @override
   State<AddUpdateView> createState() => _AddUpdateViewState();
@@ -158,7 +160,7 @@ class _AddUpdateViewState extends State<AddUpdateView> {
                   await context.read<HiveProvider>().deleteFactor(
                       widget.achievementIndex!, widget.factorIndex!);
                 }
-                Navigator.pop(context);
+                Navigator.pop(context, widget.fromFactor ? 'Deleted' : "");
               },
               icon: const Icon(Icons.delete),
             ),
