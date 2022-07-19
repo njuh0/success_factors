@@ -5,8 +5,10 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:provider/provider.dart';
 import 'package:scaffold_gradient_background/scaffold_gradient_background.dart';
 import 'package:rive/rive.dart' as rive;
+import 'package:success_factors/achievements/achievement_item.dart';
 import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/hive/achievement_hive.dart';
+import 'package:success_factors/hive/achievement_state_hive.dart';
 import 'package:success_factors/provider/hive_provider.dart';
 import 'package:success_factors/reuse/add_update_view.dart';
 import 'package:success_factors/soap_bubble.dart';
@@ -64,6 +66,24 @@ class _AchievementViewState extends State<AchievementView> {
           SliverAppBar(
             stretch: true,
             pinned: true,
+            actions: [
+              GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.only(right:15),
+                  child: genState(element.state ?? AchievementStateHive.pending, 25, text1),
+                ),
+                onTap: () async {
+                  AchievementStateHive? result = await resultPopup(element.state ?? AchievementStateHive.pending);
+                  if(result != null) {
+                    element.state = result;
+                    if(result != AchievementStateHive.pending){
+                      element.analysis = await analysisPopup(result);
+                    }
+                    await context.read<HiveProvider>().updateAchievement(element, widget.index);
+                    setState(() {});
+                  }
+                },
+              )],
             expandedHeight: MediaQuery.of(context).size.width * 0.89,
             flexibleSpace: FlexibleSpaceBar(
               collapseMode: CollapseMode.pin,
@@ -317,6 +337,134 @@ class _AchievementViewState extends State<AchievementView> {
       ),
     );
   }
+  Future<AchievementStateHive?> resultPopup(AchievementStateHive currentState) async {
+    AchievementStateHive? state;
+    await showFloatingModalBottomSheet(
+          backgroundColor: text1,
+          context: context,
+          builder: (contextB) {
+            return SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 20),
+                padding: const EdgeInsets.all(30),
+                child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Flexible(
+                        fit: FlexFit.loose,
+                        child: Text(
+                          "THE RESULT OF EFFORTS",
+                          style: TextStyle(
+                              fontSize: size30,
+                              fontWeight: FontWeight.w900,
+                              color: bg1),
+                        ),
+                      ),
+                      SizedBox(height:50),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          if(currentState != AchievementStateHive.pending)
+                          GestureDetector(
+                            onTap: (){
+                              state = AchievementStateHive.pending;
+                              Navigator.pop(context);
+                            },
+                            child: CircleAvatar(child: genState(AchievementStateHive.pending, 50, bg1), backgroundColor: bg1),
+                          ),
+                        if(currentState != AchievementStateHive.success)
+                           GestureDetector(
+                            onTap: (){
+                              state = AchievementStateHive.success;
+                              Navigator.pop(context);
+                            },
+                            child: genState(AchievementStateHive.success, 50, bg1),
+                          ),
+                        if(currentState != AchievementStateHive.fail)
+                           GestureDetector(
+                            onTap: (){
+                              state = AchievementStateHive.fail;
+                              Navigator.pop(context);
+                            },
+                            child: genState(AchievementStateHive.fail, 50, bg1),
+                          ),
+                      ])
+                    ]),
+              ),
+            );
+          },
+    );
+    return state;
+  }
+
+  Future<String?> analysisPopup(AchievementStateHive result) async {
+    String? analysis;
+    await showFloatingModalBottomSheet(
+          backgroundColor: text1,
+          context: context,
+          builder: (contextB) {
+            TextEditingController c = TextEditingController();
+            return SingleChildScrollView(
+              child: Container(
+                margin: EdgeInsets.only(bottom: 20),
+                padding: const EdgeInsets.all(30),
+                child: Column(                        
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                              child: Text(
+                              "Analyze your result",
+                              style: TextStyle(
+                                  fontSize: size30,
+                                  fontWeight: FontWeight.w900,
+                                  color: bg1),
+                            ),
+                          ),
+                          IconButton(
+                          icon: Icon(Icons.done_rounded, color: bg1, size: size30),
+                          onPressed: (){
+                            analysis = c.text;
+                            Navigator.pop(context);
+                          },
+                        ),
+                        ],
+                      ),
+                      SizedBox(height:10),
+                      Text(
+                        result == AchievementStateHive.success ? "Why you succeeded?" : (result == AchievementStateHive.fail ? "Why you failed?" : ""),
+                        style: TextStyle(
+                            fontSize: size15,
+                            color: bg1),
+                      ),
+                      SizedBox(height:20),
+                      Center(
+                        child: TextField(
+                        controller: c,
+                        maxLines: 10,
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(
+                              borderSide: const BorderSide(width: 0.5, color: bg1),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                        ),
+                        
+                          ),
+                      ),
+                      SizedBox(height:50),
+                    
+                    ]),
+              ),
+            );
+          },
+    );
+    return analysis;
+  }
+
 
   void achievementPopup(BuildContext context, AchievementHive element, bool isAchievement) {
     showFloatingModalBottomSheet(
@@ -327,8 +475,10 @@ class _AchievementViewState extends State<AchievementView> {
           child: Container(
             margin: EdgeInsets.only(bottom: 20),
             padding: const EdgeInsets.all(30),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            child: 
+            Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, 
+                  children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

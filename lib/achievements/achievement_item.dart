@@ -6,6 +6,7 @@ import 'package:success_factors/helps/consts.dart';
 import 'package:rive/rive.dart' as rive;
 
 import 'package:success_factors/hive/achievement_hive.dart';
+import 'package:success_factors/hive/achievement_state_hive.dart';
 import 'package:success_factors/provider/hive_provider.dart';
 import 'package:success_factors/reuse/add_update_view.dart';
 
@@ -102,14 +103,20 @@ class _AchievementItemState extends State<AchievementItem> {
                 style: const TextStyle(fontSize: size15, color: bg1),
               ),
             ),
-            title: Text(
+            subtitle: Text(
+              widget.element.analysis ?? "",
               textAlign: TextAlign.center,
+              style: const TextStyle(
+                  fontSize: size15, color: bg1),
+            ),
+            title: Text(
               '"${widget.element.title}"',
+              textAlign: TextAlign.center,
               style: const TextStyle(
                   fontSize: size15, fontWeight: FontWeight.w600, color: bg1),
             ),
             trailing:
-                genState(widget.element.state ?? AchivementStateHive.pending),
+                genState(widget.element.state ?? AchievementStateHive.pending, 25, bg1),
           ),
         ),
         // Divider(
@@ -119,29 +126,28 @@ class _AchievementItemState extends State<AchievementItem> {
       ],
     );
   }
-
-  Widget genState(AchivementStateHive state) {
-    if (AchivementStateHive.pending == state) {
-      return const SizedBox(
-        height: 25,
-        width: 25,
+}
+  Widget genState(AchievementStateHive state, double size, Color color) {
+    if (AchievementStateHive.pending == state) {
+      return  SizedBox(
+        height: size,
+        width: size,
         child: rive.RiveAnimation.asset('assets/rive/puls2.riv',
             fit: BoxFit.fitWidth),
       );
-    } else if (AchivementStateHive.fail == state) {
-      return const Icon(
+    } else if (AchievementStateHive.fail == state) {
+      return  Icon(
         Icons.cancel_rounded,
         // color: Color(0xFFEF9A9A),
-        color: bg1,
-        size: 25,
+        color: color,
+        size: size,
       );
     } else {
-      return const Icon(
-        Icons.done_rounded,
+      return  Icon(
+        Icons.check_circle_rounded,
         // color: Color(0xFFEF9A9A),
-        color: bg1,
-        size: 25,
+        color: color,
+        size: size,
       );
     }
   }
-}

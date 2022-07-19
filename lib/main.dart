@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:success_factors/achievements.dart';
 import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/hive/achievement_hive.dart';
+import 'package:success_factors/hive/achievement_state_hive.dart';
 import 'package:success_factors/hive/factor_hive.dart';
 import 'package:success_factors/provider/hive_provider.dart';
 
@@ -11,6 +12,8 @@ Future<void> main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(FactorHiveAdapter());
   Hive.registerAdapter(AchievementHiveAdapter());
+  Hive.registerAdapter(AchivementStateHiveAdapter());
+
 
   // var box = await Hive.openBox<AchievementHive>('achi');
   // box.clear();

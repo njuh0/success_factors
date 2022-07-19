@@ -6,34 +6,34 @@ part of 'achievement_state_hive.dart';
 // TypeAdapterGenerator
 // **************************************************************************
 
-class AchivementStateHiveAdapter extends TypeAdapter<AchivementStateHive> {
+class AchivementStateHiveAdapter extends TypeAdapter<AchievementStateHive> {
   @override
   final int typeId = 3;
 
   @override
-  AchivementStateHive read(BinaryReader reader) {
+  AchievementStateHive read(BinaryReader reader) {
     switch (reader.readByte()) {
       case 0:
-        return AchivementStateHive.fail;
+        return AchievementStateHive.fail;
       case 1:
-        return AchivementStateHive.success;
+        return AchievementStateHive.success;
       case 2:
-        return AchivementStateHive.pending;
+        return AchievementStateHive.pending;
       default:
-        return AchivementStateHive.pending;
+        return AchievementStateHive.pending;
     }
   }
 
   @override
-  void write(BinaryWriter writer, AchivementStateHive obj) {
+  void write(BinaryWriter writer, AchievementStateHive obj) {
     switch (obj) {
-      case AchivementStateHive.fail:
+      case AchievementStateHive.fail:
         writer.writeByte(0);
         break;
-      case AchivementStateHive.success:
+      case AchievementStateHive.success:
         writer.writeByte(1);
         break;
-      case AchivementStateHive.pending:
+      case AchievementStateHive.pending:
         writer.writeByte(2);
         break;
     }

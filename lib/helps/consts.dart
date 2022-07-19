@@ -12,8 +12,9 @@ List<Color> pickerColors = [
 ];
 const List<IconData> pickerIcons = [
   Icons.auto_awesome_sharp,
-  Icons.star,
-  Icons.workspaces,
+  Icons.emoji_objects,
+  Icons.filter_vintage,
+  Icons.cookie,
   Icons.cloud_rounded,
   Icons.cruelty_free_sharp,
   Icons.diamond,

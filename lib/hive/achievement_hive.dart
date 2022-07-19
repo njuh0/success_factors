@@ -1,10 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:success_factors/hive/achievement_state_hive.dart';
 
 import 'package:success_factors/hive/factor_hive.dart';
 
 part 'achievement_hive.g.dart';
 
-enum AchivementStateHive { fail, success, pending }
 
 @HiveType(typeId: 1)
 class AchievementHive {
@@ -13,6 +13,7 @@ class AchievementHive {
     this.description,
     this.factors,
     this.state,
+    this.analysis
   });
 
   @HiveField(0)
@@ -25,7 +26,10 @@ class AchievementHive {
   List<FactorHive>? factors;
 
   @HiveField(3)
-  AchivementStateHive? state;
+  AchievementStateHive? state;
+
+  @HiveField(4)
+  String? analysis;
 
   double getPercent() {
     if (factors == null || factors!.isEmpty) return 0;

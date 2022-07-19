@@ -163,6 +163,7 @@ class _AddUpdateViewState extends State<AddUpdateView> {
                 Navigator.pop(context, widget.fromFactor ? 'Deleted' : "");
               },
               icon: const Icon(Icons.delete),
+              tooltip: 'Delete',
             ),
         ],
         title: Text(

@@ -21,14 +21,15 @@ class AchievementHiveAdapter extends TypeAdapter<AchievementHive> {
       description: fields[1] as String?,
       factors:
           fields[2] == null ? [] : (fields[2] as List?)?.cast<FactorHive>(),
-      state: fields[3] as AchivementStateHive?,
+      state: fields[3] as AchievementStateHive?,
+      analysis: fields[4] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, AchievementHive obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(5)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -36,7 +37,9 @@ class AchievementHiveAdapter extends TypeAdapter<AchievementHive> {
       ..writeByte(2)
       ..write(obj.factors)
       ..writeByte(3)
-      ..write(obj.state);
+      ..write(obj.state)
+      ..writeByte(4)
+      ..write(obj.analysis);
   }
 
   @override
