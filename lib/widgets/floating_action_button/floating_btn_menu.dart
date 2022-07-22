@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:success_factors/achievements/credits.dart';
+import 'package:success_factors/achievements/readme.dart';
 import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/widgets/btn_transparent_text.dart';
 import 'package:success_factors/widgets/floating_modal.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FloatingBtnMenu extends StatefulWidget {
   const FloatingBtnMenu({Key? key}) : super(key: key);
@@ -40,29 +43,14 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                            child: GestureDetector(
+                          child: GestureDetector(
                           // behavior: HitTestBehavior.translucent,
-                          child: BtnTransparentText(text: 'READ ME'),
-                          onTap: () {
-                            print('READ ME');
-                          },
-                        )),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                            child: GestureDetector(
-                          // behavior: HitTestBehavior.translucent,
-                          child: BtnTransparentText(text: 'ANALYSIS'),
-                          onTap: () {
-                            print('READ ME');
-                          },
-                        )),
+                            child: BtnTransparentText(text: 'READ ME'),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Readme()) );
+                            },
+                          ),
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -80,9 +68,15 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Expanded(
-                          child: Card(
+                          child: GestureDetector(
+                            onTap: () async {                             
+                              if (!await launchUrl(Uri.parse('https://github.com/njuh0/success_factors'))) {
+                                throw 'error lauch';
+                              }
+                            },
+                            child: const Card(
                             color: bg1,
                             elevation: 20,
                             child: SizedBox(
@@ -98,19 +92,24 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                               ),
                             ),
                           ),
+                          ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         Expanded(
-                          child: Card(
+                          child: GestureDetector(
+                            onTap: (){                             
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Credits()) );
+                            },
+                            child: const Card(
                             color: bg1,
                             elevation: 20,
                             child: SizedBox(
                               height: 100,
                               child: Center(
                                 child: Text(
-                                  'License',
+                                  'Credits',
                                   style: TextStyle(
                                       fontSize: size15,
                                       fontWeight: FontWeight.w900,
@@ -118,6 +117,7 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                                 ),
                               ),
                             ),
+                          ),
                           ),
                         ),
                       ],

@@ -78,6 +78,8 @@ class _AchievementViewState extends State<AchievementView> {
                     element.state = result;
                     if(result != AchievementStateHive.pending){
                       element.analysis = await analysisPopup(result);
+                    } else {
+                      element.analysis = null;
                     }
                     await context.read<HiveProvider>().updateAchievement(element, widget.index);
                     setState(() {});
