@@ -10,6 +10,10 @@ analyzer
 2.15
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/analyzer-4.1.0/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/analyzer-4.1.0/lib/
+archive
+2.12
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/archive-3.3.1/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/archive-3.3.1/lib/
 args
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/args-2.3.1/
@@ -66,6 +70,10 @@ checked_yaml
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/checked_yaml-2.0.1/lib/
+cli_util
+2.12
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cli_util-0.3.5/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/cli_util-0.3.5/lib/
 clock
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/clock-1.1.0/
@@ -110,6 +118,10 @@ fixnum
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/fixnum-1.0.1/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/fixnum-1.0.1/lib/
+flutter_launcher_icons
+2.12
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.10.0/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.10.0/lib/
 flutter_lints
 2.17
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
@@ -154,6 +166,10 @@ http_parser
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-4.0.1/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib/
+image
+2.15
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/image-3.2.0/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/image-3.2.0/lib/
 io
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/io-1.0.3/
@@ -234,6 +250,10 @@ path_provider_windows
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider_windows-2.0.6/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/path_provider_windows-2.0.6/lib/
+petitparser
+2.16
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/petitparser-5.0.0/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/petitparser-5.0.0/lib/
 platform
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/platform-3.1.0/
@@ -374,6 +394,10 @@ xdg_directories
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.2.0+1/
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xdg_directories-0.2.0+1/lib/
+xml
+2.17
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xml-6.1.0/
+file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/xml-6.1.0/lib/
 yaml
 2.12
 file:///C:/Users/Njuh/AppData/Local/Pub/Cache/hosted/pub.dartlang.org/yaml-3.1.1/
