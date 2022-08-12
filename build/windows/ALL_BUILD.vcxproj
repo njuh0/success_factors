@@ -150,6 +150,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{17B92F60-9B5E-3BEE-9B66-08A6D5CAC26B}</Project>
       <Name>success_factors</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\FlutterProjects\success_factors\build\windows\plugins\url_launcher_windows\url_launcher_windows_plugin.vcxproj">
+      <Project>{4418AE0F-42B6-3D5E-A34C-68BF6428975A}</Project>
+      <Name>url_launcher_windows_plugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

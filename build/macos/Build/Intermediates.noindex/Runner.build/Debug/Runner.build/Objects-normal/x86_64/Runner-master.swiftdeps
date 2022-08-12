@@ -1,7 +1,0 @@
-version: "Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
-options: "8733d47e1c1c93fdef72938c30f9aee7"
-build_time: [1658488252, 312671000]
-inputs:
-  "/Users/edgarvasli/DevelopmentFlutter/success_factors/macos/Runner/MainFlutterWindow.swift": [1657905638, 32422035]
-  "/Users/edgarvasli/DevelopmentFlutter/success_factors/macos/Runner/AppDelegate.swift": [1657905638, 28162372]
-  "/Users/edgarvasli/DevelopmentFlutter/success_factors/macos/Flutter/GeneratedPluginRegistrant.swift": [1658488216, 643766572]

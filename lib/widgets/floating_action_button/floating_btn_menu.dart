@@ -5,6 +5,7 @@ import 'package:success_factors/helps/consts.dart';
 import 'package:success_factors/widgets/btn_transparent_text.dart';
 import 'package:success_factors/widgets/floating_modal.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 class FloatingBtnMenu extends StatefulWidget {
   const FloatingBtnMenu({Key? key}) : super(key: key);
@@ -44,10 +45,27 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                       children: [
                         Expanded(
                           child: GestureDetector(
-                          // behavior: HitTestBehavior.translucent,
-                            child: BtnTransparentText(text: 'READ ME'),
+                            // behavior: HitTestBehavior.translucent,
+                            child: kIsWeb
+                                ? Container(
+                                    color: bg1,
+                                    height: 100,
+                                    child: const Center(
+                                      child: Text(
+                                        'READ ME',
+                                        style: TextStyle(
+                                            fontSize: size30,
+                                            fontWeight: FontWeight.w900,
+                                            color: text1),
+                                      ),
+                                    ),
+                                  )
+                                : BtnTransparentText(text: 'READ ME'),
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Readme()) );
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Readme()));
                             },
                           ),
                         ),
@@ -71,27 +89,28 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                       children: [
                         Expanded(
                           child: GestureDetector(
-                            onTap: () async {                             
-                              if (!await launchUrl(Uri.parse('https://github.com/njuh0/success_factors'))) {
+                            onTap: () async {
+                              if (!await launchUrl(Uri.parse(
+                                  'https://github.com/njuh0/success_factors'))) {
                                 throw 'error lauch';
                               }
                             },
                             child: const Card(
-                            color: bg1,
-                            elevation: 20,
-                            child: SizedBox(
-                              height: 100,
-                              child: Center(
-                                child: Text(
-                                  'Github',
-                                  style: TextStyle(
-                                      fontSize: size15,
-                                      fontWeight: FontWeight.w900,
-                                      color: text1),
+                              color: bg1,
+                              elevation: 20,
+                              child: SizedBox(
+                                height: 100,
+                                child: Center(
+                                  child: Text(
+                                    'Github',
+                                    style: TextStyle(
+                                        fontSize: size15,
+                                        fontWeight: FontWeight.w900,
+                                        color: text1),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
                           ),
                         ),
                         const SizedBox(
@@ -99,25 +118,28 @@ class _FloatingBtnMenuState extends State<FloatingBtnMenu> {
                         ),
                         Expanded(
                           child: GestureDetector(
-                            onTap: (){                             
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => const Credits()) );
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Credits()));
                             },
                             child: const Card(
-                            color: bg1,
-                            elevation: 20,
-                            child: SizedBox(
-                              height: 100,
-                              child: Center(
-                                child: Text(
-                                  'Credits',
-                                  style: TextStyle(
-                                      fontSize: size15,
-                                      fontWeight: FontWeight.w900,
-                                      color: text1),
+                              color: bg1,
+                              elevation: 20,
+                              child: SizedBox(
+                                height: 100,
+                                child: Center(
+                                  child: Text(
+                                    'Credits',
+                                    style: TextStyle(
+                                        fontSize: size15,
+                                        fontWeight: FontWeight.w900,
+                                        color: text1),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
                           ),
                         ),
                       ],

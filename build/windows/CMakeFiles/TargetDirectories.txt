@@ -8,3 +8,6 @@ C:/FlutterProjects/success_factors/build/windows/flutter/CMakeFiles/INSTALL.dir
 C:/FlutterProjects/success_factors/build/windows/runner/CMakeFiles/success_factors.dir
 C:/FlutterProjects/success_factors/build/windows/runner/CMakeFiles/INSTALL.dir
 C:/FlutterProjects/success_factors/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/FlutterProjects/success_factors/build/windows/plugins/url_launcher_windows/CMakeFiles/url_launcher_windows_plugin.dir
+C:/FlutterProjects/success_factors/build/windows/plugins/url_launcher_windows/CMakeFiles/INSTALL.dir
+C:/FlutterProjects/success_factors/build/windows/plugins/url_launcher_windows/CMakeFiles/ALL_BUILD.dir

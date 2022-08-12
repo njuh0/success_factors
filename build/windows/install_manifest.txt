@@ -1,6 +1,16 @@
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/icudtl.dat
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/flutter_windows.dll
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/url_launcher_windows_plugin.dll
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Black.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Bold.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-ExtraBold.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-ExtraLight.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Light.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Medium.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Regular.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-SemiBold.ttf
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/fonts/kanit/Kanit-Thin.ttf
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/bg1.riv
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/bg2.riv
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/bubble%20(2).riv
@@ -12,7 +22,7 @@ C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_asset
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/puls.riv
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/puls2.riv
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/puls3.riv
-C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/space_coffee%20(7).riv
+C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/assets/rive/space_coffee.riv
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 C:/FlutterProjects/success_factors/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
